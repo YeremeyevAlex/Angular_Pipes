@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Angular Pipes</h1>
+
+  <div class="box">
+    <input type="text" [(ngModel)]="search" />
+    <label class="red"><input type="radio" (click)="searchField = 'title'" id="i1" name="mycheck" value="1"
+        checked />Title</label>
+    <label class="blue"><input type="radio" (click)="searchField = 'text'" id="i2" name="mycheck"
+        value="2" />Text</label>
+  </div>
+
+
+  <div *ngFor="let post of posts | filter:search:searchField" class="card">
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+  </div>
+</div>
